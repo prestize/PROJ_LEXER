@@ -89,8 +89,10 @@ void driverFunction(FILE *f, FILE *symbolTable)
         else if (currentCharacter == '\n')
         {
             currentCharacter = getNextCharacter(f);
-            // fprintf(symbolTable,"NEWLINE = NEWLINE\n");
-            // just in case kailanganin ang newline @.@, create a function na pag ang next characters ay newline din, ignore lang.
+            
+            if(currentCharacter != '\n'){
+                fprintf(symbolTable,"NEWLINE = NEWLINE\n");
+            }
         }
 
         else if (isdigit(currentCharacter))
